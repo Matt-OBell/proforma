@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_invoice_sent']" position="after">      
+                        <button name="action_profoma_invoice_cancel" type="object" states="proforma" string="Cancel" class="oe_highlight" groups="account.group_account_invoice"/>
+                    </xpath>
+                <xpath expr="//button[@name='action_invoice_sent']" position='after'>
+                        <button name="action_set_to_profoma" type="object" states="draft" string='Set to proforma' class="oe_highlight" groups="account.group_account_invoice"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
