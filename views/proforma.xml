@@ -13,6 +13,7 @@
                 <xpath expr="//button[@name='action_invoice_sent']" position="after">
                     <button name="action_profoma_invoice_cancel" type="object" states="proforma" string="Cancel" groups="account.group_account_invoice" />
                     <button name="action_invoice_open" type="object" states="proforma" string="Validate" class="oe_highlight" groups="account.group_account_invoice" />
+                        <button name="action_proforma_invoice_sent" type="object" states="proforma" string="Send by Email" class="oe_highlight" groups="account.group_account_invoice" />
 
                 </xpath>
                 <xpath expr="//button[@name='action_invoice_sent']" position='after'>

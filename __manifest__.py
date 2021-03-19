@@ -25,9 +25,11 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        "data/email_template.xml",
         'reports/proreport.xml',
         'reports/report.xml',
         "views/sequence.xml",
+
         "views/proforma.xml",
     ],
     # only loaded in demonstration mode
