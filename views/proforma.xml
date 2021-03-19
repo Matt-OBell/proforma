@@ -5,13 +5,18 @@
             <field name="name">account.invoice.supplier.form</field>
             <field name="model">account.invoice</field>
             <field name="priority">2</field>
-            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="inherit_id" ref="account.invoice_form" />
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='action_invoice_sent']" position="after">      
-                        <button name="action_profoma_invoice_cancel" type="object" states="proforma" string="Cancel" class="oe_highlight" groups="account.group_account_invoice"/>
-                    </xpath>
+                <xpath expr="//header/field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">proforma,draft,open,paid</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_invoice_sent']" position="after">
+                    <button name="action_profoma_invoice_cancel" type="object" states="proforma" string="Cancel" groups="account.group_account_invoice" />
+                    <button name="action_invoice_open" type="object" states="proforma" string="Validate" class="oe_highlight" groups="account.group_account_invoice" />
+
+                </xpath>
                 <xpath expr="//button[@name='action_invoice_sent']" position='after'>
-                        <button name="action_set_to_profoma" type="object" states="draft" string='Set to proforma' class="oe_highlight" groups="account.group_account_invoice"/>
+                    <button name="action_set_to_profoma" type="object" states="draft" string='Set to proforma'  groups="account.group_account_invoice" />
                 </xpath>
             </field>
         </record>
