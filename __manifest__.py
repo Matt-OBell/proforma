@@ -20,20 +20,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', "account"],
+    'depends': ['base', "account_invoicing"],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'reports/report.xml',
         "data/email_template.xml",
         'reports/proreport.xml',
-        'reports/report.xml',
         "views/sequence.xml",
-
         "views/proforma.xml",
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
     ],
 }
